@@ -505,7 +505,11 @@ function SpoilerAlert()
     mobwarnings["neqoxec"] = "can mutate you, and drain your Int!"
     mobwarnings["Norris"] = "can cast Paralyse, Smite you, and drain your Int!"
     mobwarnings["orange crystal statue"] = "can cast Confuse, Drain MP, and drain your Int!"
-
+    mobwarnings["brain worm"] = "can drain your Int!"
+    mobwarnings["giant orange brain"] = mobwarnings["giant orange brain"]
+    mobwarnings["neqoxec"] = mobwarnings["neqoxec"]
+    mobwarnings["Norris"] = mobwarnings["Norris"]
+    mobwarnings["orange crystal statue"] = mobwarnings["orange crystal statue"]
     mobwarnings["cacodemon"] = "can cast Energy bolts, Dig, and mutate you!"
     mobwarnings["orb of fire"] = "can cast Fireball and Bolt of Fire, and mutate you!"
     if no_rMut then
