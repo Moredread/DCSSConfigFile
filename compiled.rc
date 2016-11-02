@@ -3768,7 +3768,6 @@ function SpoilerAlert()
     local no_rC = you.res_cold() == 0
     local no_rN = you.res_draining() == 0
     local no_rE = you.res_shock() == 0
-    local no_Sustab = you.res_statdrain() == 0
     local no_rMut = you.res_mutation() == 0
     local you_are_flying = you.flying()
     local no_see_invis = not you.see_invisible()
@@ -4262,14 +4261,6 @@ function SpoilerAlert()
     mobwarnings["neqoxec"] = "can mutate you, and drain your Int!"
     mobwarnings["Norris"] = "can cast Paralyse, Smite you, and drain your Int!"
     mobwarnings["orange crystal statue"] = "can cast Confuse, Drain MP, and drain your Int!"
-    if no_Sustab then
-        local statdrainwarning = "<red> You are not wearing SustAb!</red>"
-        mobwarnings["brain worm"] = "can drain your Int!" .. statdrainwarning
-        mobwarnings["giant orange brain"] = mobwarnings["giant orange brain"] .. statdrainwarning
-        mobwarnings["neqoxec"] = mobwarnings["neqoxec"] .. statdrainwarning
-        mobwarnings["Norris"] = mobwarnings["Norris"] .. statdrainwarning
-        mobwarnings["orange crystal statue"] = mobwarnings["orange crystal statue"] .. statdrainwarning
-    end
 
     mobwarnings["cacodemon"] = "can cast Energy bolts, Dig, and mutate you!"
     mobwarnings["orb of fire"] = "can cast Fireball and Bolt of Fire, and mutate you!"
