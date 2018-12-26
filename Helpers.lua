@@ -111,6 +111,7 @@ end
 
 function can_not_butcher()
     return string.find(crawl.messages(10), escape("anything suitable to butcher here"))
+        or string.find(crawl.messages(10), escape("isn't edible"))
 end
 
 function can_not_eat_that()

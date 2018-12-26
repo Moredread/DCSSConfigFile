@@ -13,6 +13,7 @@
 # To override other settings you don't like, you may redefine them after the include like the language setting
 
 # Logs chat messages into the notes
+# Set this to false before including my rcfile to disable
 note_chat_messages = true
 
 <
@@ -233,7 +234,6 @@ more += The divine light dispels your darkness!
 more += The walls disappear
 more += There is a sealed passage
 more += You are wearing\:
-more += You can now
 more += You cannot afford.*fee
 more += You feel (dopey|clumsy|weak)
 more += You feel a genetic drift
@@ -251,7 +251,6 @@ more += Your guardian golem overheats
 more += your magic stops regenerating
 more += Your scales start
 more += your.*devoured
-more += Your?.*can no longer
 more += Green shoots are pushing up through the earth
 
 # Things getting better
@@ -380,11 +379,18 @@ more += Sif Muna is protecting you from the effects of miscast magic
 more += The Shining One will now bless
 # Zin
 more += will now cure all your mutations
+
 # You Screwed Up
 more += is no longer ready
 
 # Poor Decisions
 more += You really shouldn't be using
+
+# Gaining new abilities
+: if you.god() ~= "Uskayaw" then
+more += You can now
+more += Your?.*can no longer
+: end
 
 # Wrath
 more += Nemelex gives you another card to finish dealing
@@ -3514,6 +3520,7 @@ end
 
 function can_not_butcher()
     return string.find(crawl.messages(10), escape("anything suitable to butcher here"))
+        or string.find(crawl.messages(10), escape("isn't edible"))
 end
 
 function can_not_eat_that()
@@ -4832,6 +4839,10 @@ end
 message_colour += mute:you're not good enough to have a special ability
 message_colour += mute:@corpse
 
+# Picks up all ego weapons if you worship Beogh
+# Set this to false before including my rcfile to disable
+beogh_autopickup = you.god():find("Beogh")
+
 ####################
 # Opens skill menu #
 ####################
@@ -4964,7 +4975,7 @@ add_autopickup_func(function(it, name)
 
     if (you.xl() < 12) or (you.god():find("Nemelex")
                            or (you.god():find("Yred"))
-                           or (you.god():find("Beogh"))) then
+                           or (beogh_autopickup)) then
       if it.branded and not (it.name() == "club") then
         return false
       end

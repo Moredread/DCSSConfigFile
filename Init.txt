@@ -13,6 +13,7 @@
 # To override other settings you don't like, you may redefine them after the include like the language setting
 
 # Logs chat messages into the notes
+# Set this to false before including my rcfile to disable
 note_chat_messages = true
 
 <
