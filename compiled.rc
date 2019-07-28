@@ -595,7 +595,6 @@ $mp := lightcyan
 #channel.plain =
 channel.prompt = $interface
 channel.god = $godaction
-channel.pray = $godaction
 channel.duration = $warning
 channel.danger = $danger
 channel.food = $warning
