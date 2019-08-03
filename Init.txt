@@ -16,6 +16,20 @@
 # Set this to false before including my rcfile to disable
 note_chat_messages = true
 
+tile_viewport_scale = 1.5
+tile_realtime_anim = true
+
+#tile_cell_pixels = 48
+tile_font_crt_size = 28
+tile_font_stat_size = 28
+tile_font_msg_size = 28
+tile_font_tip_size = 28
+tile_font_lbl_size = 28
+tile_map_pixels = 0
+tile_show_demon_tier = true
+
+restart_after_game = false
+
 <
   function ready()
     AnnounceDamage()

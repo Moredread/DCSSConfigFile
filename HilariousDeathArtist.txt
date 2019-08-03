@@ -23,7 +23,7 @@ beogh_autopickup = you.god():find("Beogh")
 #############
 
 # Do/don't throw stuff when autofighting
-autofight_throw = true
+autofight_throw = false
 autofight_throw_nomove = true
 # If true. items are autofired stopping at the monsters feet (same as firing using .)
 autofight_fire_stop = true
@@ -91,7 +91,6 @@ ae += <artefact
 # Armour/Weapon autopickup by rwbarton, enhanced by HDA with fixes from Bloaxor
 {
 add_autopickup_func(function(it, name)
-
   if name:find("curare") then return true end
   if name:find("dispersal") and (name:find("dart") or name:find("tomahawk")) then return true end
   if name:find("throwing net") then return true end
@@ -291,7 +290,7 @@ auto_exclude += Sojobo, Sonja, Terence, Urug, Wiglaf, Xtahua, hog, slave
 ###############
 
 # Set travel delay to -1 for instant-travel, set to 1 to see travel paths
-travel_delay = -1
+travel_delay = 1
 
 explore_stop = glowing_items,artefacts,greedy_pickup_smart
 explore_stop += greedy_visited_item_stack,stairs,shops
@@ -300,7 +299,7 @@ explore_stop += altars,portals,branches,runed_doors,greedy_sacrificeable
 # Adjusts how much autoexplore favours attempting to discover room perimeters and corners.
 # At values higher than 0, autoexplore will more heavily favour visiting squares that are next to walls
 # reasonable values range from 0 to 10 maybe?
-explore_wall_bias = 3
+explore_wall_bias = 5
 
 # Make auto travel sacrifice corpses
 sacrifice_before_explore = true

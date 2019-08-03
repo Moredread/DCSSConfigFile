@@ -254,7 +254,7 @@ function find_corpses()
     local god = you.god()
     local exclude_this = ""
     if string.find(god, "Shining") then
-        exlude_this = race
+        exclude_this = race
     end
     sendkeys(string.char(6) .. "@corpse&&!!rott&&!!skel&&!!sky&&!!necrop&&!!ugly&&!!vampire&&!!corpse rot&&!!botono" .. exclude_this .. "\ra\r")
 end
